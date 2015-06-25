@@ -1,3 +1,16 @@
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+# Ignore Eclipse maintained files
+.classpath
+.project
+.settings/
+
+*.log
+.DS_Store
+/target/
 *.class
 
 # Mobile Tools for Java (J2ME)
