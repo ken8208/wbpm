@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My JSP 'productInformation.jsp' starting page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<style type="text/css">
+	.tr_background_back{
+		background-color: #A5998F;
+	}
+</style>
+<script type="text/javascript">
+	function checkDetail(obj) {
+		alert($(obj).parent().parent().first().attr("id"));
+		var txt = $(obj).parent().parent().first().text();
+		alert(txt);
+	}
+</script>
+  </head>
+  
+  <body>
+    <fieldset>
+    	<legend>过站信息</legend>
+    	<table>
+    		<thead>
+    			<th>站位</th>
+    			<th>时间</th>
+    			<th>过站次数</th>
+    			<th>记录明细</th>
+    		</thead>
+    		<tbody>
+    			 <tr>
+    				<td id="t1">SMT投入</td>
+    				<td id="d47"></td>
+    				<td id="d48"></td>
+    				<td id="d49"><a href="javascript:void(0);" id="b1" onclick="checkDetail(this);">查看详情</a></td>
+    			</tr>
+    			<tr >
+    				<td id="t2">SMT炉前</td>
+    				<td id="d50"></td>
+    				<td id="d51"></td>
+    				<td id="d52"><a href="javascript:void(0);" id="b2" onclick="checkDetail(this);">查看详情</a></td>
+    			</tr>
+    			<tr>
+    				<td>SMT炉后</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>测试投入</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>Download</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>写SN号</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>BT</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>FT</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>CFT</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>WBG</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>MMI</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>check</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>SMT QC</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>组装投入</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>sample1</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>sample2</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>音频</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>电流</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>耦合</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>WBG</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>check</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>组装产出</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>FQC</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>写IMEI号</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>Download</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>check</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>附件绑定</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>打印彩盒</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>比对彩盒</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>彩盒称重</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>OQC</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>称重装箱</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>装栈板</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    			<tr>
+    				<td>出货</td>
+    				<td></td>
+    				<td></td>
+    				<td></td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </fieldset>
+    <!-- 弹出详情页面 开始-->
+    
+    
+    
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
