@@ -8,9 +8,9 @@
 <body>
 	<h3>用户管理</h3>
 	<form action="api/myresource/user2" method="post" >
-		<p>姓名:<input name="name" /></p>
-		<p>年龄:<input name="age" /></p>
-		<p>地址:<input name="address" /></p>
+		<p>姓名:<input name="u_name" /></p>
+		<p>年龄:<input name="u_age" /></p>
+		<p>地址:<input name="u_address" /></p>
 		<p><input type="submit" value="保存"/></p>
 	</form>
 </body>

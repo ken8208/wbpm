@@ -12,11 +12,11 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 public class User
 {
-	@FormParam("name")
+	@FormParam("u_name")
 	private String name;
-	@FormParam("age")
+	@FormParam("u_age")
 	private Integer age;
-	@FormParam("address")
+	@FormParam("u_address")
 	private String address;
 	
 	public String getName()

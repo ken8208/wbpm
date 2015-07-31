@@ -1,5 +1,7 @@
 package com.wbpm.demo;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.Collections;
 
 import javax.servlet.ServletConfig;
@@ -15,6 +17,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -76,6 +79,26 @@ public class MyResource
 		Assert.notNull(user, "user为空");
 		System.out.println("user : " +ToStringBuilder.reflectionToString(user));
 		return Response.ok().entity(Collections.emptyMap()).build();
+	}
+	
+	@GET
+	@Path("/export_file")
+	@Produces(MediaType.APPLICATION_OCTET_STREAM)
+	public Response exportAgentProfiles() throws Exception
+	{
+		String str = "1,aa,bb,cc\r2,dd,ee,ff\r";
+		
+		 return buildExportFileResponse("AAAA.csv", str.getBytes());
+	}
+	
+	private Response buildExportFileResponse(final String fileName, byte[] content) throws UnsupportedEncodingException
+	{
+		return Response
+                .ok(content, MediaType.APPLICATION_OCTET_STREAM_TYPE)
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename="+URLDecoder.decode(fileName, "UTF-8"))
+                .header(HttpHeaders.CACHE_CONTROL, "no-cache")
+                .header(HttpHeaders.CONTENT_LENGTH, content.length)
+                .header("Pragma", "no-cache").build();
 	}
 
 }

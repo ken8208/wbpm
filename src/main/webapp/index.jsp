@@ -4,7 +4,6 @@
     <p><a href="api/myresource/got">Jersey resource</a>
     <p><a href="api/myresource/msg?msg=helloworld">hello world</a>
     <p><a href="user.jsp">add user</a>
-    <p>Visit <a href="http://jersey.java.net">Project Jersey website</a>
-    for more information on Jersey!
+   	<p><a href="api/myresource/export_file">export file</a>
 </body>
 </html>
