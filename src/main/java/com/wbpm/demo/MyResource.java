@@ -86,9 +86,9 @@ public class MyResource
 	@Produces(MediaType.APPLICATION_OCTET_STREAM)
 	public Response exportAgentProfiles() throws Exception
 	{
-		String str = "1,aa,bb,cc\r2,dd,ee,ff\r";
+		String str = "1,测试1,测试2,测试3\r2,dd,ee,ff\r";
 		
-		 return buildExportFileResponse("AAAA.csv", str.getBytes());
+		 return buildExportFileResponse("test_export.csv", str.getBytes());
 	}
 	
 	private Response buildExportFileResponse(final String fileName, byte[] content) throws UnsupportedEncodingException
