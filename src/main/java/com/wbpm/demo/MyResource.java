@@ -7,8 +7,7 @@ import java.util.Collections;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-import javax.ws.rs.BeanParam;
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -23,6 +22,8 @@ import javax.ws.rs.core.Response;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.util.Assert;
+
+import com.wbpm.common.VerifyCodeUtils;
 
 /**
  * Root resource (exposed at "myresource" path)
@@ -58,7 +59,7 @@ public class MyResource
 	@Path("/msg")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response printMsg(@Valid @PathParam("msg")String msg)
+	public Response printMsg(@PathParam("msg")String msg)
 	{
 		System.out.println("msg : " + msg);
 		return Response.ok().entity(Collections.emptyMap()).build();
@@ -69,16 +70,28 @@ public class MyResource
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	public Response saveUser(@FormParam("name")String name, @FormParam("age")Integer age, @FormParam("address")String address) {
 //		Assert.notNull(user, "user为空");
+		System.out.println("name : "+name);
+		System.out.println("age : "+age);
+		System.out.println("address : "+address);
 //		System.out.println("user : " +ToStringBuilder.reflectionToString(user));
 		return Response.ok().entity(Collections.emptyMap()).build();
 	}
 	@POST
 	@Path("/user2")
-	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	public Response saveUser(@BeanParam User user) {
+//	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	public Response saveUser(User user) {
 		Assert.notNull(user, "user为空");
 		System.out.println("user : " +ToStringBuilder.reflectionToString(user));
-		return Response.ok().entity(Collections.emptyMap()).build();
+		try
+		{
+			Thread.sleep(1000*60);
+		}
+		catch (InterruptedException e)
+		{
+			e.printStackTrace();
+		}
+		System.out.println("user end ");
+		return Response.ok().entity(user).build();
 	}
 	
 	@GET
@@ -89,6 +102,17 @@ public class MyResource
 		String str = "1,aa,bb,cc\r2,dd,ee,ff\r";
 		
 		 return buildExportFileResponse("AAAA.csv", str.getBytes());
+	}
+
+	@GET
+	@Path("/verification/random_code")
+	@Produces("image/jpeg")
+	public void getImageVerifyCode(@Context HttpServletResponse response) throws Exception
+	{
+		String verifyCode = VerifyCodeUtils.generateVerifyCode(4);
+		int w = 66, h = 28;
+		// 生成图片
+		VerifyCodeUtils.outputImage(w, h, response.getOutputStream(), verifyCode);
 	}
 	
 	private Response buildExportFileResponse(final String fileName, byte[] content) throws UnsupportedEncodingException

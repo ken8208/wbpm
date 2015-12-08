@@ -25,4 +25,12 @@
 		<servlet-name>JerseyWebApplication</servlet-name>
 		<url-pattern>/api/*</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>verifyCode</servlet-name>
+		<servlet-class>com.wbpm.demo.AuthImage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>verifyCode</servlet-name>
+		<url-pattern>/verifyCode</url-pattern>
+	</servlet-mapping>
 </web-app>

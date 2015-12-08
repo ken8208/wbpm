@@ -4,19 +4,14 @@
  */
 package com.wbpm.demo;
 
-import javax.ws.rs.FormParam;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author <a href="mailto:ken@wolaidai.com">ken</a>
  */
 public class User
 {
-	@FormParam("u_name")
 	private String name;
-	@FormParam("u_age")
 	private Integer age;
-	@FormParam("u_address")
 	private String address;
 	
 	public String getName()
